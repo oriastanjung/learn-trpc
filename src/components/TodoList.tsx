@@ -12,7 +12,7 @@ export default function TodoList() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const createTodo = addTodo.mutate({ name: todo });
-
+    await getTodos.refetch()
     console.log("createTodo >> ", createTodo);
   };
   return (
